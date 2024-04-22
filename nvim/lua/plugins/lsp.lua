@@ -100,7 +100,7 @@ return {
 
 	-- Enable the following language servers
 	local servers = { 'clangd', 'rust_analyzer', 'pyright', 'tsserver',
-                      'texlab'}
+                      'texlab', 'alex'}
 	for _, lsp in ipairs(servers) do
 		lspconfig[lsp].setup {
 			on_attach = on_attach,
