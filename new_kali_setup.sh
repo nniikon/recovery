@@ -15,3 +15,7 @@ cd neovim/
 make CMAKE_BUILD_TYPE=RelWithDebInfo
 sudo make install
 
+cp nvim ~/.config/ -r
+
+git config --global user.email "kolya.kasparov@gmail.com"
+git config --global user.name "nniikon"
