@@ -10,11 +10,13 @@ sudo apt install cmake
 sudo apt install gettext
 # sudo apt install texlive-full 
 
+
 # Build neovim
 git clone https://github.com/neovim/neovim
 cd neovim/
 make CMAKE_BUILD_TYPE=RelWithDebInfo
 sudo make install
+cd ../
 
 # Build lazygit
 LAZYGIT_VERSION=$(curl -s "https://api.github.com/repos/jesseduffield/lazygit/releases/latest" | grep -Po '"tag_name": "v\K[^"]*')
@@ -23,6 +25,19 @@ tar xf lazygit.tar.gz lazygit
 sudo install lazygit /usr/local/bin
 
 cp nvim ~/.config/ -r
+
+# Build tmux
+git clone https://github.com/tmux/tmux.git
+cd tmux/
+sudo apt install autoconf
+sudo apt install automake
+sudo apt install pkg-config
+sudo apt install libevent-dev
+sudo apt install bison
+sudo apt install byacc
+sh autogen.sh
+./configure && make
+cd ../
 
 git config --global user.email "kolya.kasparov@gmail.com"
 git config --global user.name "nniikon"
