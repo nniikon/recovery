@@ -90,7 +90,8 @@ return {
 		    vim.keymap.set('n', '<leader>wl', function() print(vim.inspect(vim.lsp.buf.list_workspace_folders())) end, attach_opts)
 		    vim.keymap.set('n', '<leader>D', vim.lsp.buf.type_definition, attach_opts)
 		    vim.keymap.set('n', '<leader>rn', vim.lsp.buf.rename, attach_opts)
-		    vim.keymap.set('n', 'so', require('telescope.builtin').lsp_references, attach_opts)
+		    vim.keymap.set('n', '<leader>ca', vim.lsp.buf.code_action, attach_opts)
+		    vim.keymap.set('n', '<leader>so', require('telescope.builtin').lsp_references, attach_opts)
 	    end
 
 	require("lspconfig").clangd.setup {}
@@ -100,7 +101,7 @@ return {
 
 	-- Enable the following language servers
 	local servers = { 'clangd', 'rust_analyzer', 'pyright', 'tsserver',
-                      'texlab', 'alex'}
+                      'texlab', 'alex', 'svlangserver'}
 	for _, lsp in ipairs(servers) do
 		lspconfig[lsp].setup {
 			on_attach = on_attach,

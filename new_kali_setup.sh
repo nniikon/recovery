@@ -4,6 +4,7 @@ sudo apt update
 sudo apt upgrade
 # sudo apt install xournalpp
 sudo apt install keepass2 
+sudo apt install nodejs
 sudo apt install telegram-desktop
 sudo apt install cmake
 # Neovim won't build without it
