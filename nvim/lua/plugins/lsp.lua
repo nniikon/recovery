@@ -92,6 +92,9 @@ return {
 		    vim.keymap.set('n', '<leader>rn', vim.lsp.buf.rename, attach_opts)
 		    vim.keymap.set('n', '<leader>ca', vim.lsp.buf.code_action, attach_opts)
 		    vim.keymap.set('n', '<leader>so', require('telescope.builtin').lsp_references, attach_opts)
+            vim.keymap.set('n', '<leader>di', function()
+                vim.diagnostic.open_float(nil, { focus = false, scope = "line" })
+            end, attach_opts)
 	    end
 
 	require("lspconfig").clangd.setup {}

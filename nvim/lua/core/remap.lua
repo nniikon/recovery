@@ -19,6 +19,6 @@ vim.keymap.set({ "n", "v" }, "<leader>d", [["_d]])
 
 vim.keymap.set("i", "<C-c>", "<Esc>")
 
-vim.keymap.set("n", "<leader><leader>", function()
-	vim.cmd("so")
-end)
+vim.keymap.set("n", "<leader>bn", "<cmd>bnext<CR>")
+vim.keymap.set("n", "<leader>bp", "<cmd>bprevious<CR>")
+vim.keymap.set("n", "<leader>bd", "<cmd>bdelete<CR>")

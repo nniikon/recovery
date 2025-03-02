@@ -12,7 +12,12 @@ vim.opt.wrap = false
 
 vim.opt.swapfile = false
 vim.opt.backup = false
-vim.opt.undodir = os.getenv("HOME") .. "/.vim/undodir"
+
+-- Get home directory or fallback
+local home = os.getenv("HOME") or "~"
+
+-- Set undo directory and enable undo files
+vim.opt.undodir = home .. "/.vim/undodir"
 vim.opt.undofile = true
 
 vim.opt.hlsearch = false
