@@ -16,4 +16,5 @@ curl -Lo lazygit.tar.gz "https://github.com/jesseduffield/lazygit/releases/lates
 tar xf lazygit.tar.gz lazygit
 sudo install lazygit /usr/local/bin
 
-cp nvim ~/.config/nvim -r
+mkdir ~/.config
+cp nvim ~/.config/ -r
